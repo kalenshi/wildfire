@@ -1,0 +1,12 @@
+# Employer navigates to the main page and is greeted by top bar menu with the following items
+# About, Resume, Projects, Blog, login, signup
+# Employer notices a photo of Kalenshi on the front page
+# Employer navigates to Resume and finds information about Kalenshi
+# Employer navigates to about where there's a brief description of what Kalenshi is into.
+# Employer navigates to  Blog where several Articles about programming,computer science in general, Mathematics and running are found.
+# Employer browses through one article, gets intrigued and would like to make a contribution
+# Employer sees a reply box, types in his contribution, but is redirected to log/register in page
+# Employer registers an account using emial as username 
+# Upon successful account creation, Employer is rediected to the blog page containing the article he wished to contribute to.
+# employee successfully adds the contribution to the article
+# Employer satisfied by the sight, closes it the webpage.
