@@ -2,6 +2,7 @@
 Database model for our projects user
 """
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth.models import (
     PermissionsMixin, BaseUserManager, AbstractBaseUser
 )
@@ -14,9 +15,9 @@ class UserManager(BaseUserManager):
         """Create, save and return a new user"""
         if not email:
             raise ValueError("Email is a required Field for all users.")
-        email = self.normalize_email(email)
+
         user = self.model(
-            email=email,
+            email=self.normalize_email(email),
             **extra_fields
         )
         user.set_password(password)
@@ -38,6 +39,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
+    date_joined = models.DateTimeField(verbose_name="Member since", default=timezone.now)
 
     is_active = models.BooleanField(default=True)
 
