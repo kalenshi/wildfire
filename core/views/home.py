@@ -1,11 +1,12 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView, View
 
 
-class HomeView(View):
-    """Provides get functionality for the home page"""
-    template_name = "core/home.html"
-
-    def get(self, request, **kwargs):
-        return render(request, self.template_name, {"name": "Kalenshi Katebe"})
+def home(request) -> None:
+    """function view of the home page"""
+    return render(
+        request,
+        "core/home.html",
+        {"name": "Man Kalenshi", "is_authenticated": False}
+    )
