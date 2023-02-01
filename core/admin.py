@@ -8,6 +8,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from core import models
 
 
+@admin.register(models.User)
 class UserAdmin(BaseUserAdmin):
     """Define the admin pages for our users"""
     ordering = ["id"]
@@ -44,6 +45,3 @@ class UserAdmin(BaseUserAdmin):
             )
         }),
     )
-
-
-admin.site.register(models.User, UserAdmin)
